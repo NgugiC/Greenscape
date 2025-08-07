@@ -1,0 +1,8 @@
+@use 'sass:color';
+
+$accent-color: #727CF5;
+$light-accent-color: color.adjust($accent-color, $lightness: 8%);
+$primary-color: #e6e4e6;
+$secondary-color: rgb(194, 194, 193);
+
+$transition: all 1s ease;

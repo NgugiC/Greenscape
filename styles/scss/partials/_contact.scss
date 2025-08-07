@@ -1,0 +1,182 @@
+@use 'sass:color';
+@use "variables" as *;
+
+.hero {
+    h2 {
+        justify-self: center;
+    }
+
+    .contacts {
+        display: flex;
+        gap: 2rem;
+        padding: 1rem;
+        width: max-content;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        .icon {
+            border-radius: 50%;
+            height: 2rem;
+            width: 2rem;
+            background-color: $accent-color;
+            cursor: pointer;
+            display: flex;
+            position: relative;
+            
+            &::before {
+                content: attr(id);
+                position: absolute;
+                width: fit-content;
+                font-size: 0.7rem;
+                color: #fff;
+                padding: 0.3rem .5rem;
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -1.9rem);
+                background-color: $accent-color;
+                border-radius: 1rem;
+                opacity: 0;       
+                transition: $transition;
+                pointer-events: none;
+            }
+            
+            &::after {
+                pointer-events: none;
+                z-index: -1;
+                content: '';
+                position: absolute;
+                top: -18px;
+                left: 50%;
+                transform: rotate(-45deg) translate(-50%);
+                width: .7rem;
+                height: .7rem;
+                background-color: $accent-color;
+                opacity: 0;
+                transition: $transition;
+            }
+
+            &:hover::before, &:hover::after {
+                    // display: block;
+                    opacity: 1;
+                }
+
+            a {
+                padding: 0.3rem;
+                display: flex;
+
+                svg {
+                    transform: scale(.7);
+                    width: 100%;
+                    fill: #fff;
+                    align-self: center;
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+
+.quote {
+    background: color.adjust($secondary-color, $lightness: 5%);
+    border-radius: 2rem;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        margin: 2rem 0;
+        align-self: center;
+    }
+
+    .input-group {
+        margin-bottom: 2rem;
+        position: relative;
+        
+        input, textarea {
+            width: 100%;
+            background-color: transparent;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: inset 2px 2px 5px $secondary-color, inset -2px -2px 5px $primary-color;
+            
+            &:not(:placeholder-shown) + label {
+                transform: translate(50%, -95%);
+                box-shadow: inset 2px 2px 5px $secondary-color, inset -2px -2px 5px $primary-color;
+                padding: .2rem .7rem;
+            }
+        }
+        
+        textarea {
+            line-height: 1.5;
+            resize: none;
+            height: 9rem;
+        }
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(45%, 50%);
+            transition: $transition;
+        }
+    }
+
+    input[type='number'] {        
+        + label {
+            transform: translate(15%, 50%);
+        }
+        
+        &:not(:placeholder-shown) + label {
+            transform: translate(20%, -95%);
+        }
+    }
+
+    input[type="submit"] {
+        padding: 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        border-radius: 1rem;
+        font-weight: bold;        
+        cursor: pointer;
+        transition: $transition;
+        background-color: color.adjust($accent-color, $lightness: 8%);
+        box-shadow: 3px 3px 15px 1px color.adjust($primary-color, $lightness: -28%);
+        color: #fff;
+        
+        &:hover, &:focus {
+            background-color: $accent-color;
+        }
+    }
+}
+
+.social {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    transform: translate(-1.4rem, -4rem);
+    max-width: 3vw;
+
+    .whatsapp {
+        width: 2rem;
+        height: 2rem;
+        background-color: $accent-color;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        
+        a {
+            padding: 0.3rem;
+            display: flex;
+
+            svg {
+                width: 100%;
+                align-self: center;
+                justify-self: center;
+                fill: #fff;
+            }
+        }
+
+    }
+}

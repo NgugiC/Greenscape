@@ -1,0 +1,33 @@
+@use 'sass:color';
+@use 'variables' as *;
+
+.pricing {
+    margin-top: 1rem;
+    display: grid;
+
+    h1 {
+        place-self: center;
+        margin-bottom: 1rem;
+    }
+
+    table {
+        width: 100%;
+        margin-bottom: 1rem;
+        border-collapse: collapse;
+
+        tr {            
+            th, td {
+                padding: .3rem 0 .3rem 2rem;
+                text-align: left;
+            }
+                    
+            &:nth-child(odd) {
+                background-color: color.adjust($accent-color, $lightness: 6%);
+            }
+
+            &:nth-child(even) {
+                background-color: color.adjust($accent-color, $lightness: 11%);
+            }
+        }
+    }
+}

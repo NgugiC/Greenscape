@@ -1,0 +1,180 @@
+@use 'variables' as *;
+
+@media (min-width: 768px) {
+    body, input[type='submit'] {
+        font-size: 1.2rem;
+    }
+
+    // !Header Styles
+    header .nav {
+        padding: 0;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr auto;
+        
+        .toggle-menu {
+            display: none;
+        }
+        
+        ul.menu {
+            display: flex;
+            // position: static;
+            height: 100%;
+            max-width: fit-content;
+            background-color: transparent;
+            border-bottom-right-radius: 0rem;
+            position: relative;
+            top: 0;
+            overflow: visible;
+            // height: 12rem;
+
+            li {
+                border: none;
+                height: 100%;
+
+                a {
+                    color: $accent-color;
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                &#projects {
+                    padding-right: 1rem;
+
+                    &:hover {
+                        .projects-sub a {
+                            color: $accent-color;
+                        }
+
+                        &::after {
+                        top: 50%;
+                        left: 80%;
+                        transform: translateY(-50%);
+                        height: 1.2rem;
+                        width: 1.2rem;
+                        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" fill="%23fff"/></svg>');
+                        }
+                    }
+
+                    .projects-sub {
+                        position: absolute;
+                        background-color: $primary-color;
+                        top: 0;
+                        left: 0;
+                        transform: translateY(2.8rem);
+                        width: max-content;
+
+                        li {
+                            border-color:$secondary-color;
+                        }
+                    }
+
+                    &::after {
+                        top: 50%;
+                        left: 80%;
+                        transform: translateY(-50%);
+                        height: 1.2rem;
+                        width: 1.2rem;
+                        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" fill="%23727cf5"/></svg>');
+                    }
+                }
+            }
+        }
+    }
+
+    // !Hero Section
+    .hero {
+        background: url(/images/landscape/2.jpg) no-repeat center center/cover;
+        font-size: 2rem;
+        border-bottom-right-radius: 0;
+
+        .contacts {
+            .icon {
+                width: 3rem;
+                height: 3rem;
+                padding: 0.2rem;
+
+                &::after {
+                    width: 1rem;
+                    height: 1rem;
+                    transform: translate(-.4rem, -.2rem) rotate(45deg);
+                }
+
+                &::before {
+                    padding: .3rem 0.6rem;
+                    font-size: 1rem;
+                    transform: translate(-2rem, -2.8rem);
+                }
+            }
+        }
+    }
+
+    // !Contact Page
+    .social {
+        transform: translate(-.6rem, -4rem);
+
+        .whatsapp {
+            width: 3rem;
+            height: 3rem;
+            padding: 0.2rem;
+        }
+    }
+
+    .quote {
+        width: 500px;
+        justify-self: center;
+
+        .input-group {
+            margin-top: 2.5rem;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            label {
+                transform: translate(1rem, .9rem);
+            }
+
+            input, textarea {
+                font-size: 1.2rem;
+
+                    &[type='number'] {
+                        + label {
+                        transform: translate(10%, 46%);
+                    }
+                    
+                    &:not(:placeholder-shown) + label {
+                        transform: translate(20%, -100%);
+                    }
+                }
+            }
+
+            textarea:not(:placeholder-shown) +label {
+                transform: translate(2.4rem, -2.2rem);
+            }
+        }
+    }
+
+    // !Pricing Page
+    .pricing {
+        display: grid;
+        place-items: center;
+
+            table {
+            width: 50%;
+        }
+    }
+
+    // !Projects Page
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px){
+    // !Projects Page
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
