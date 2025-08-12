@@ -155,8 +155,8 @@
     position: fixed;
     right: 0;
     bottom: 0;
-    transform: translate(-1.4rem, -4rem);
-    max-width: 3vw;
+    transform: translateY(-4rem);
+    z-index: 1;
 
     .whatsapp {
         width: 2rem;
