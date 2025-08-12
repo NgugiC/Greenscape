@@ -106,19 +106,27 @@
                 box-shadow: inset 2px 2px 5px $secondary-color, inset -2px -2px 5px $primary-color;
                 padding: .2rem .7rem;
             }
+
+            &:autofill {
+                box-shadow: 2px 2px 5px -1000px $primary-color inset, -2px -2px 5px 1000px $secondary-color inset;
+            }
         }
         
         textarea {
             line-height: 1.5;
             resize: none;
             height: 9rem;
+
+            &:not(:placeholder-shown) + label {
+                transform: translate(40%, -95%);
+            }
         }
 
         label {
             position: absolute;
             top: 0;
             left: 0;
-            transform: translate(45%, 50%);
+            transform: translate(30%, 50%);
             transition: $transition;
         }
     }
