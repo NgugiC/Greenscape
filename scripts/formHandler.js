@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = 'error.html'
                 console.error('Server responded: ',response.status, response.statusText)
                 console.error('Web3Forms error: ', result.message)
+                errorMsg.innerHTML = response.status
             }
         }
         catch (error) {
