@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form');
-    const submitBtn = document.querySelector('button[type="submit"]')
+    const form = document.querySelector('#contact-form');
+    const submitBtn = form.querySelector('button[type="submit"]')
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault(); //Block Default Web3Forms Redirect
