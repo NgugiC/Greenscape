@@ -141,7 +141,7 @@
         }
     }
 
-    input[type="submit"] {
+    button[type="submit"]{
         padding: 1rem;
         margin-bottom: 2rem;
         width: 100%;
@@ -152,11 +152,43 @@
         background-color: color.adjust($accent-color, $lightness: 8%);
         box-shadow: 3px 3px 15px 1px color.adjust($primary-color, $lightness: -28%);
         color: #fff;
+        position: relative;
         
         &:hover, &:focus {
             background-color: $accent-color;
         }
+
+        &.loading {
+            position: relative;
+            opacity: .7;
+            padding-left: 40px;
+
+            // Loading Spinner        
+            &::before {
+                content: '';
+                position: absolute;
+                left: 35%;
+                top: 65%;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+                margin-top: -8px;
+                border: 2px solid #fff;
+                border-top-color: transparent;
+                border-radius: 50%;
+                animation: spin .8s linear infinite;
+            }
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: .7;
+        }
     }
+}
+
+@keyframes spin {
+    100% { transform: translateY(-50%) rotate(360deg); }
 }
 
 .social {

@@ -22,6 +22,26 @@
         }
     }
 
+    // Network-Error Page
+    .warning {
+        @extend .check;
+        border-color: $warning-color;
+
+        svg {
+            fill: $warning-color;
+        }
+    }
+
+    // Error Page
+    .error {
+        @extend .check;
+        border-color: $error-color;
+
+        svg {
+            fill: $error-color;
+        }
+    }
+
     h4 {
         font-size: 1.2rem;
         text-align: center;

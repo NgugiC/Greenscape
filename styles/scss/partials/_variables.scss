@@ -4,6 +4,8 @@ $accent-color: #5460ed;
 $light-accent-color: color.adjust($accent-color, $lightness: 8%);
 $primary-color: #e6e4e6;
 $secondary-color: rgb(194, 194, 193);
+$error-color: #b30000;
+$warning-color: #b35a00;
 
 $transition: all 1s ease;
 
