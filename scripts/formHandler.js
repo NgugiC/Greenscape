@@ -10,18 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.textContent = 'Sending...'
         submitBtn.disabled = true
         submitBtn.classList.add('loading')
-
-        const formData = new FormData(form);
-
+        
         try {
             console.log("Form action:", form.action)
             console.log("Form method:", form.method)
-
+            
+            const formData = new FormData(form)
             const response = await fetch(form.action, {
-                method: form.method,
+                method: "POST",
                 body: formData,
                 headers: { Accept: "application/json" }
             })
+
+            const result = await response.json()
 
             if (response.ok) {
                 window.location.href = 'success.html'
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else {
                 window.location.href = 'error.html'
                 console.error('Server responded: ',response.status, response.statusText)
+                console.error('Web3Forms error: ', result.message)
             }
         }
         catch (error) {
