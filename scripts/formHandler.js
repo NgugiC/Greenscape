@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
         
         try {
             const formData = new FormData(form)
+
+            // Debug
+            // for (let[key, value] of formData.entries()) {
+            //     console.log(key, ":", value)
+            // }
+
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData,
