@@ -38,6 +38,19 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = false
             submitBtn.classList.remove('loading')
         }
+        
+        // Capture FormSubmission Time
+        const now = new Date() // Current Date and Time
+
+        // Format: YYYY-MM-DD HH:MM:SS
+        const formatted = now.getFullYear() + "-" +
+        String(now.getMonth() + 1).padStart(2, "0") + "-" +
+        String(now.getDate()).padStart(2, "0") + " " +
+        String(now.getHours()).padStart(2, "0") + ":" +
+        String(now.getMinutes()).padStart(2, "0") + ":" +
+        String(now.getSeconds()).padStart(2, "0")
+
+        document.querySelector('#submission-time').value = formatted
     })
 })
 
