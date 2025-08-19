@@ -11,6 +11,26 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.disabled = true
         submitBtn.classList.add('loading')
         
+        // Capture Form Submission Time
+        const now = new Date() // Current Date and Time
+
+        // Format: YYYY-MM-DD HH:MM:SS
+        const formatted = now.getFullYear() + "-" +
+        String(now.getMonth() + 1).padStart(2, "0") + "-" +
+        String(now.getDate()).padStart(2, "0") + " " +
+        String(now.getHours()).padStart(2, "0") + ":" +
+        String(now.getMinutes()).padStart(2, "0") + ":" +
+        String(now.getSeconds()).padStart(2, "0")
+
+        // Timezone Offset
+        const offset = -now.getTimezoneOffset()
+        const sign = offset >= 0 ? "+" :"-"
+        const hours = String(Math.floor(Math.abs(offset) / 60)).padStart(2, "0")
+        const minutes = String(Math.abs(offset) % 60).padStart(2, "0")
+        const timezone = `GMT${sign}${hours}:${minutes}`
+
+        document.querySelector('#submission-time').value = `${formatted} ${timezone}`
+        
         try {
             const formData = new FormData(form)
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -38,19 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = false
             submitBtn.classList.remove('loading')
         }
-        
-        // Capture FormSubmission Time
-        const now = new Date() // Current Date and Time
-
-        // Format: YYYY-MM-DD HH:MM:SS
-        const formatted = now.getFullYear() + "-" +
-        String(now.getMonth() + 1).padStart(2, "0") + "-" +
-        String(now.getDate()).padStart(2, "0") + " " +
-        String(now.getHours()).padStart(2, "0") + ":" +
-        String(now.getMinutes()).padStart(2, "0") + ":" +
-        String(now.getSeconds()).padStart(2, "0")
-
-        document.querySelector('#submission-time').value = formatted
     })
 })
 
