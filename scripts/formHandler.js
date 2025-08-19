@@ -40,3 +40,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
 })
+
+// Whatsapp Redirect
+document.querySelector('#whatsapp-link').addEventListener('click', e => {
+    e.preventDefault()
+    window.location.href= "https://api.whatsapp.com/send?phone=254715538159"
+})
+
+// Phone Number Injector
+document.querySelector('#phone-number').addEventListener('click', e => {
+    e.preventDefault()
+    window.location.href= "tel:+254715538159"
+})
