@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', async function (e) {
         e.preventDefault(); 
 
+        // Grab the name entered
+        const userName = document.querySelector('#name').value
+
+        // Update the Form Subject Field Dynamically
+        document.querySelector('#subject').value = `Quote Request from ${userName}`
+
         // Show Loading State
         const originalText = submitBtn.value;
         submitBtn.textContent = 'Sending...'
@@ -39,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //     console.log(key, ":", value)
             // }
 
-            const response = await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch(form.action, {
                 method: "POST",
                 body: formData,
                 headers: { Accept: "application/json" }

@@ -12,7 +12,7 @@ header .nav .menu #projects.active::after {
 
     h1 {
         justify-self: center;
-        color: #fff;
+        color: $primary-color;
 
         &::after {
             display: none;

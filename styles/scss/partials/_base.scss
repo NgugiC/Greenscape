@@ -125,7 +125,7 @@ header {
                         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" fill="%23727cf5"/></svg>');
                         background-repeat: no-repeat;
                         background-size: contain;
-                        // transition: $transition;
+                        transition: $transition;
                     }
                     
                     .projects-sub {
@@ -134,17 +134,21 @@ header {
                         height: 0;
                         overflow: hidden;
                         transition: $transition;
+
+                        li:focus a {
+                            color: $primary-color;
+                        }
                     }
 
-                    &:hover {
+                    &:hover, &:focus {
                         .projects-sub {
                             height: fit-content;
     
                             a {
                                 color: $accent-color;
     
-                                &:hover {
-                                    color: #fff;
+                                &:hover, &:focus {
+                                    color: $primary-color;
                                 }
                             }
                         }
@@ -159,11 +163,11 @@ header {
                     border-bottom: 1px solid $secondary-color;
                 }
 
-                &.active , &:hover  {
+                &.active , &:hover, &:focus  {
                     background-color: $accent-color;
 
                     a {
-                        color: #fff;
+                        color: $primary-color;
                     }
                 }
 
@@ -191,7 +195,7 @@ header {
     align-items: center;
     
     h1, h2, h3, h4, h5, h6 {
-        color: #fff;
+        color: $primary-color;
         margin-bottom: 1rem;        
 
         &::after {
