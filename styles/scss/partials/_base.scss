@@ -135,7 +135,7 @@ header {
                         overflow: hidden;
                         transition: $transition;
 
-                        li:focus a {
+                        li:focus a, li.active a {
                             color: $primary-color;
                         }
                     }

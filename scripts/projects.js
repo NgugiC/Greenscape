@@ -1,78 +1,95 @@
 // Projects Array
-const projects = [
-    {
-        portrait: './images/portrait/1.jpg',
-        landscape: './images/landscape/1.jpg',
-        description: 'Project Description...',
-        id: 1
-    },
-    {
-        portrait: './images/portrait/2.jpg',
-        landscape: './images/landscape/2.jpg',
-        description: 'Project Description...',
-        id: 2
-    },
-    {
-        portrait: './images/portrait/3.jpg',
-        landscape: './images/landscape/3.jpg',
-        description: 'Project Description...',
-        id: 3
-    },
-    {
-        portrait: './images/portrait/4.jpg',
-        landscape: './images/landscape/4.jpg',
-        description: 'Project Description...',
-        id: 4
-    },
-    {
-        portrait: './images/portrait/5.jpg',
-        landscape: './images/landscape/5.jpg',
-        description: 'Project Description...',
-        id: 5
-    },
-    {
-        portrait: './images/portrait/6.jpg',
-        landscape: './images/landscape/6.jpg',
-        description: 'Project Description...',
-        id: 6
-    },
-    {
-        portrait: './images/portrait/7.jpg',
-        landscape: './images/landscape/7.jpg',
-        description: 'Project Description...',
-        id: 7
-    },
-    {
-        portrait: './images/portrait/8.jpg',
-        landscape: './images/landscape/8.jpg',
-        description: 'Project Description...',
-        id: 8
-    },
-    {
-        portrait: './images/portrait/9.jpg',
-        landscape: './images/landscape/9.jpg',
-        description: 'Project Description...',
-        id: 9
-    },
-    {
-        portrait: './images/portrait/10.jpg',
-        landscape: './images/landscape/10.jpg',
-        description: 'Project Description...',
-        id: 10
-    },
-    {
-        portrait: './images/portrait/11.jpg',
-        landscape: './images/landscape/11.jpg',
-        description: 'Project Description...',
-        id: 11
-    },
-    {
-        portrait: './images/portrait/12.jpg',
-        landscape: './images/landscape/12.jpg',
-        description: 'Project Description...',
-        id: 12
-    },
-]
+const projectsData = {
+    carShades: [
+        {
+            portrait: './images/portrait/1.jpg',
+            landscape: './images/landscape/1.jpg',
+            description: 'Project Description...',
+            id: 1
+        },
+        {
+            portrait: './images/portrait/2.jpg',
+            landscape: './images/landscape/2.jpg',
+            description: 'Project Description...',
+            id: 2
+        },
+        {
+            portrait: './images/portrait/3.jpg',
+            landscape: './images/landscape/3.jpg',
+            description: 'Project Description...',
+            id: 3
+        },
+        {
+            portrait: './images/portrait/4.jpg',
+            landscape: './images/landscape/4.jpg',
+            description: 'Project Description...',
+            id: 4
+        },
+    ],
+    canopies: [
+        {
+            portrait: './images/portrait/5.jpg',
+            landscape: './images/landscape/5.jpg',
+            description: 'Project Description...',
+            id: 5
+        },
+        {
+            portrait: './images/portrait/6.jpg',
+            landscape: './images/landscape/6.jpg',
+            description: 'Project Description...',
+            id: 6
+        },
+        {
+            portrait: './images/portrait/7.jpg',
+            landscape: './images/landscape/7.jpg',
+            description: 'Project Description...',
+            id: 7
+        },
+        {
+            portrait: './images/portrait/8.jpg',
+            landscape: './images/landscape/8.jpg',
+            description: 'Project Description...',
+            id: 8
+        },
+    ],
+    privacyScreens: [
+        {
+            portrait: './images/portrait/9.jpg',
+            landscape: './images/landscape/9.jpg',
+            description: 'Project Description...',
+            id: 9
+        },
+        {
+            portrait: './images/portrait/10.jpg',
+            landscape: './images/landscape/10.jpg',
+            description: 'Project Description...',
+            id: 10
+        },
+        {
+            portrait: './images/portrait/11.jpg',
+            landscape: './images/landscape/11.jpg',
+            description: 'Project Description...',
+            id: 11
+        },
+        {
+            portrait: './images/portrait/12.jpg',
+            landscape: './images/landscape/12.jpg',
+            description: 'Project Description...',
+            id: 12
+        },
+    ]
+}
+
+// Detect Category from URL
+function getCategoryFromURL() {
+    const path = window.location.pathname.toLowerCase()
+
+    if (path.includes('car-shades')) return 'carShades'
+    if (path.includes('canopies')) return 'canopies'
+    if (path.includes('privacy-screens')) return 'privacyScreens'
+
+    return null
+}
 
 // Check Screen Orientation
 const isPortraitScreen = window.innerHeight > window.innerWidth
@@ -80,6 +97,10 @@ const isPortraitScreen = window.innerHeight > window.innerWidth
 
 // Function to Render Projects
 function renderProjects() {
+    const category = getCategoryFromURL()
+    if (!category) return
+
+    const projects = projectsData[category]
     const projectsDiv = document.querySelector('.projects')
     
     projectsDiv.innerHTML = ''
@@ -101,8 +122,6 @@ function renderProjects() {
 }
 
 // Initialize
-renderProjects()
-
 window.addEventListener('DOMContentLoaded', renderProjects)
 
 // Improve Performance During Continuous Resizing

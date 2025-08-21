@@ -42,7 +42,7 @@
                 &#projects {
                     padding-right: 1rem;
 
-                    &:hover {
+                    &:hover, &:focus {
                         .projects-sub a {
                             color: $accent-color;
                         }
@@ -65,8 +65,8 @@
                         transform: translateY(2.8rem);
                         width: max-content;
 
-                        li {
-                            border-color:$secondary-color;
+                        li.active a, li:focus a {
+                            color: $primary-color;
                         }
                     }
 
@@ -112,7 +112,7 @@
 
     // !Contact Page
     .social {
-        transform: translate(-.6rem, -4rem);
+        // transform: translate(0, -4rem);
 
         .whatsapp {
             width: 3rem;
