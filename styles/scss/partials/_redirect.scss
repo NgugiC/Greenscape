@@ -1,13 +1,14 @@
 @use 'sass:color';
 @use 'variables' as *;
 
-.thanks {
+.redirect {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 
+    // Success Page
     .check {
         height: 4rem;
         width: 4rem;
@@ -63,5 +64,6 @@
         padding: .5rem 1rem;
         border-radius: .7rem;
         cursor: pointer;
+        font-weight: 600;
     }
 }

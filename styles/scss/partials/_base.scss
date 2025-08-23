@@ -93,6 +93,7 @@ header {
             }
         }    
 
+        // Main Menu
         .menu {
             position: absolute;
             top: 2.3rem;
@@ -111,6 +112,7 @@ header {
             li {            
                 transition: $transition;
                 
+                // Projects sub-menu
                 &#projects {
                     display: flex;
                     position: relative;
@@ -127,48 +129,57 @@ header {
                         background-size: contain;
                         transition: $transition;
                     }
+
+                    a.active {
+                        +.projects-sub {
+                            height: fit-content;
+                            
+                            &::after {                  
+                                background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" fill="%23fff"/></svg>');
+                            }
+                        }
+                    }
                     
                     .projects-sub {
                         background: $primary-color;
+                        color: $accent-color;
                         width: 100%;
                         height: 0;
                         overflow: hidden;
                         transition: $transition;
 
-                        li:focus a, li.active a {
-                            color: $primary-color;
+                        a {
+                            color: $accent-color;
+    
+                            &:focus, &.active, &:hover {
+                                color: $primary-color;
+                            }
                         }
                     }
 
                     &:hover, &:focus {
+                        background-color: $accent-color;
+
+                        >a {
+                            color: $primary-color;
+                        }
+
                         .projects-sub {
                             height: fit-content;
-    
-                            a {
-                                color: $accent-color;
-    
-                                &:hover, &:focus {
-                                    color: $primary-color;
-                                }
-                            }
                         }
                         
                         &::after{
                             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" fill="%23fff"/></svg>');
                         }
                     }
+
+                    &:has(a.active)::after{
+                        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" fill="%23fff"/></svg>');
+                    }
                 }
 
                 &:not(:last-of-type) {
                     border-bottom: 1px solid $secondary-color;
-                }
-
-                &.active , &:hover, &:focus  {
-                    background-color: $accent-color;
-
-                    a {
-                        color: $primary-color;
-                    }
                 }
 
                 a {
@@ -178,6 +189,11 @@ header {
                     font-weight: bold;
                     width: 100%;
                     padding: 0.5rem;
+
+                    &.active , &:hover, &:focus  {
+                        background-color: $accent-color;
+                        color: $primary-color;
+                    }
                 }
             }
         }
