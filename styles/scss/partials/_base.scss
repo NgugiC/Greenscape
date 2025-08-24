@@ -73,8 +73,13 @@ header {
         justify-content: space-between;
         width: 100%;
         
-        .logo a {
-            color: $accent-color;
+        .logo {
+            width: 30vw;
+            transform: translate(0, .2rem);
+
+            a {
+                color: $accent-color;
+            }
         }
         
         .toggle-menu {
@@ -228,10 +233,10 @@ footer{
     background-color: $light-accent-color;
     margin-top: 2rem;
     padding: 1rem 0;
-    // position: absolute;
-    // bottom: 0;
-    // right: 0;
-    // left: 0;
+
+    ul li a {
+        color: $font-color;
+    }
 
     hr{
         height: 1px;
