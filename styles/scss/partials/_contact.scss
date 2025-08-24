@@ -148,6 +148,10 @@
             transform: translate(30%, 50%);
             transition: $transition;
         }
+
+        small.error-message {
+            margin-left: 1rem;
+        }
     }
 
     input[type='number'] {        
