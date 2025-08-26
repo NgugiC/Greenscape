@@ -1,4 +1,4 @@
-*, ::before, ::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,6 +9,7 @@
     font-family: 'Quicksand', 'Poppins', serif;
 }
 
-img {
+img, svg, picture, video, canvas {
     width: 100%;
+    display: block;
 }

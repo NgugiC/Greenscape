@@ -15,13 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // Handle error
     function showError (input, message) {
         input.classList.add('invalid')
+        input.classList.add('error')
+        input.focus()
         input.classList.remove('valid')
 
         let error = input.parentElement.querySelector('.error-message')
         if (!error) {
             error = document.createElement('small')
             error.className = 'error-message'
-            error.style.color = 'red'
+            error.style.color = '#b30000'
             input.parentElement.appendChild(error)
         }
         error.textContent = message
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function showSuccess (input) {
         input.classList.add('valid')
         input.classList.remove('invalid')
+        input.classList.remove('error')
 
         const error = input.parentElement.querySelector('.error-message')
         if (error) error.textContent= ''
@@ -40,14 +43,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateName ( show = true ) {
         const value = nameInput.value.trim()
         if (value === '') {
-            if (show) showError (nameInput, 'Name is required.')
+            if (show) showError (nameInput, 'Name is required')                
             return false
         }
         else if (!/^[a-zA-Z\s]+$/.test(value)) {
-            if (show) showError (nameInput, 'Only letters and spaces allowed.')
+            if (show) showError (nameInput, 'Only letters and spaces allowed')                
             return false
         }
-        if (show) showSuccess (nameInput)
+        if (show) showSuccess (nameInput)            
         return true
     }
 
@@ -56,14 +59,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const value = emailInput.value.trim()
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
         if (value === '') {
-            if (show) showError (emailInput, 'Email is required.')
+            if (show) showError (emailInput, 'Email is required')                
                 return false
         }
         else if (!emailPattern.test(value)) {
-            if (show) showError (emailInput, 'Enter a valid email.')
+            if (show) showError (emailInput, 'Enter a valid email')                
             return false
         }
-        if (show) showSuccess (emailInput)
+        if (show) showSuccess (emailInput)            
         return true
     }
 
@@ -72,14 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const value = phoneInput.value.trim()
         const regex = /^\+?\d[\d\s-]{7,20}\d$/
         if (value === '') {
-            if (show) showError (phoneInput, 'Phone number is required.')
-                return false
-        }
-        else if (!regex.test(value)) {
-            if (show) showError (phoneInput, 'Enter a valid phone number.')
+            if (show) showError (phoneInput, 'Phone number is required')                
             return false
         }
-        if (show) showSuccess (phoneInput)
+        else if (!regex.test(value)) {
+            if (show) showError (phoneInput, 'Enter a valid phone number')                
+            return false
+        }
+        if (show) showSuccess (phoneInput)            
         return true
     }
 
@@ -87,10 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateSize ( show = true ) {
         const value = sizeInput.value.trim()
         if (value === '' || parseInt(value) < 1) {
-            if (show) showError (sizeInput, 'Must be at least 1 vehicle.')
+            if (show) showError (sizeInput, 'Must be at least 1 vehicle')                
             return false
         }
-        if (show) showSuccess (sizeInput)
+        if (show) showSuccess (sizeInput)            
         return true
     }
 
@@ -98,14 +101,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function validateMessage ( show = true ) {
         const value = messageInput.value.trim()
         if(value === '') {
-            if (show) showError (messageInput, 'Message is required.')
+            if (show) showError (messageInput, 'Message is required')                
                 return false
         }
         else if (value.length < 10) {
-            if (show) showError (messageInput, 'Message must be at least 10 characters.')
+            if (show) showError (messageInput, 'Message must be at least 10 characters long')                
             return false
         }
-        if (show) showSuccess (messageInput)
+        if (show) showSuccess (messageInput)            
         return true
     }
 

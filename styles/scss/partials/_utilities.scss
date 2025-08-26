@@ -1,0 +1,5 @@
+@use 'variables' as *;
+
+.error {
+    border: 1px solid $error-color;
+}
