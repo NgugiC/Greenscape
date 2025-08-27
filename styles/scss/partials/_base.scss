@@ -1,3 +1,4 @@
+@use 'mixins' as *;
 @use 'sass:color';
 @use 'variables' as *;
 
@@ -8,7 +9,7 @@
 body {
     background-color: $primary-color;
     position: relative;
-    color: color.adjust($secondary-color, $lightness: -50%);
+    color: $font-color;
     line-height: 1.5;
     display: flex;
     flex-direction: column;
@@ -204,6 +205,8 @@ header {
 }
 
 .hero{
+    @include glasmorphism();
+    position: relative;
     margin-top: 2.2rem;
     background: url(#{$img-path}/portrait/2.jpg) no-repeat center center/cover;
     padding: 2rem 1rem;
@@ -218,16 +221,76 @@ header {
     
     h1, h2, h3, h4, h5, h6 {
         color: $primary-color;
-        margin-bottom: 1rem;   
+        margin-bottom: 1rem; 
+        justify-self: center;  
 
         &::after {
             display: none;
+        }
+    }
+
+    button.get-quote {
+        background-color: $accent-color;
+        color: $primary-color;
+        font-weight: 700;
+        padding: .7rem;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 10px $primary-color;
+        }
+
+        a {
+            padding: .7rem;
+            // display: block;
+            color: $primary-color;
         }
     }
 }
 
 .details {
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+        h2, h3 {
+            margin: 2rem 0 .7rem 0;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+            list-style-type: disc;
+            margin-left: 1rem;
+        }
+
+        button.get-quote {
+            background-color: $accent-color;
+            color: $primary-color;
+            font-weight: 700;
+            padding: .7rem;
+            font-size: 1.2rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: $transition;
+            align-self: center;
+            width: max-content;
+    
+            &:hover, &:focus {
+                box-shadow: 0 0 20px $accent-color;
+            }
+    
+            a {
+                padding: .7rem;
+                color: $primary-color;
+            }
+        }
 }
 
 footer{
