@@ -3,31 +3,44 @@
 
 .pricing {
     margin-top: 1rem;
-    display: grid;
-
+    display: flex;
+    flex-direction: column;
+    
     h1 {
         place-self: center;
         margin-bottom: 1rem;
     }
 
-    table {
-        width: 100%;
-        margin-bottom: 1rem;
-        border-collapse: collapse;
-
-        tr {            
-            th, td {
-                padding: .3rem 0 .3rem 2rem;
-                text-align: left;
-            }
-                    
-            &:nth-child(odd) {
-                background-color: color.adjust($accent-color, $lightness: 6%);
-            }
-
-            &:nth-child(even) {
-                background-color: color.adjust($accent-color, $lightness: 11%);
+    .table {
+        overflow-X: auto;
+        
+        table {
+            width: 100%;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
+    
+            tr {
+                th, td {
+                    padding: .3rem 1rem;
+                    text-align: left;
+    
+                    flex-wrap: wrap;
+                }
+                        
+                &:nth-child(odd) {
+                    background-color: color.adjust($accent-color, $lightness: 6%);
+                }
+    
+                &:nth-child(even) {
+                    background-color: color.adjust($accent-color, $lightness: 11%);
+                }
             }
         }
     }
+}
+
+.details button.get-quote {
+    padding: .3rem .1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
 }

@@ -1,6 +1,7 @@
 @use 'mixins' as *;
 @use 'sass:color';
 @use 'variables' as *;
+@use 'utilities' as *;
 
 :root {
     interpolate-size: allow-keywords;
@@ -101,7 +102,8 @@ header {
         // Main Menu
         .menu {
             position: absolute;
-            top: 2.3rem;
+            top: 2.15rem;
+            // border: 1px solid;
             height: 0;
             transition: $transition;
             width: 100%;
@@ -118,7 +120,7 @@ header {
                 transition: $transition;
                 
                 // Projects sub-menu
-                &#projects {
+                &#solutions {
                     display: flex;
                     position: relative;
 
@@ -126,7 +128,7 @@ header {
                         content: '';
                         position: absolute;
                         top: 14px;
-                        left: 46%;
+                        left: 42%;
                         height: 1rem;
                         width: 1rem;
                         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" fill="%23727cf5"/></svg>');
@@ -210,16 +212,17 @@ header {
     margin-top: 2.2rem;
     background: url(#{$img-path}/portrait/2.jpg) no-repeat center center/cover;
     padding: 2rem 1rem;
-    min-height: 40vh;
+    min-height: 50vh;
     border-bottom-right-radius: 3rem;
     display: flex;
     align-items: center;
-
+    
     .container {
         width: max-content; // Necessary to fix heading alignment on Firefox
     }
     
     h1, h2, h3, h4, h5, h6 {
+        text-align: center;
         color: $primary-color;
         margin-bottom: 1rem; 
         justify-self: center;  
@@ -233,9 +236,9 @@ header {
         background-color: $accent-color;
         color: $primary-color;
         font-weight: 700;
-        padding: .7rem;
-        font-size: 1.2rem;
-        border-radius: 1rem;
+        padding: .3rem 0;
+        font-size: 1rem;
+        border-radius: .5rem;
         cursor: pointer;
         transition: $transition;
         position: absolute;
@@ -249,7 +252,6 @@ header {
 
         a {
             padding: .7rem;
-            // display: block;
             color: $primary-color;
         }
     }
@@ -291,6 +293,97 @@ header {
                 color: $primary-color;
             }
         }
+
+        .location {
+            height: 2rem;
+            width: max-content;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 2rem auto;
+
+            svg {
+                fill: $accent-color;
+            }
+        }
+}
+
+#testimonials {
+    margin-top: 3rem;
+    background-color: $secondary-color;
+    padding: 1rem 0;
+
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;        
+        
+        .testimonial {
+            background-color: $accent-color;
+            color: $primary-color;
+            padding: 0.5rem 2rem;
+            border-radius: .5rem;
+            margin-top: 1rem;
+            position: relative;
+            width: 100%;
+            min-height: 260px;
+            box-shadow: -3px 5px 15px $font-color;
+            
+            .review {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+        
+                &::before {
+                    content: '\201C';
+                    position: absolute;
+                    left: .5rem;
+                    top: -.3rem;
+                    font-size: 4rem;
+                    color: $primary-color;
+                }
+        
+                &::after {
+                    content: '\201D';
+                    position: absolute;
+                    right: 1rem;
+                    font-size: 4rem;
+                    color: $primary-color;
+                }
+
+                .cursor {
+                    display: inline-block;
+                    animation: blink 1s infinite;
+                    font-weight: bold;
+                }
+            }
+        
+            .client {
+                font-size: 0.9rem;
+
+                &-cursor {
+                    display: none; // Hidden initially
+                    animation: blink 1s infinite;
+                }
+            }
+        }
+    
+        .nav-buttons {
+            margin-top: 10px;
+    
+            button {
+                background-color: $accent-color;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                margin: 0 1rem;
+                height: 2em;
+                border-radius: .3rem;
+    
+                svg {
+                    fill: $primary-color;
+                }
+            }
+        }
+    }
 }
 
 footer{
