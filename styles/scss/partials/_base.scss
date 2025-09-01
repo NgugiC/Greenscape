@@ -15,7 +15,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
     p {
         margin-bottom: 1rem;
     }
@@ -104,7 +103,7 @@ header {
             position: absolute;
             top: 2.15rem;
             // border: 1px solid;
-            height: 0;
+            max-height: 0;
             transition: $transition;
             width: 100%;
             background: $primary-color;
@@ -113,7 +112,7 @@ header {
             
             
             &.active {            
-                height: fit-content;
+                max-height: 500px;
             }
             
             li {            
@@ -210,7 +209,7 @@ header {
     @include glasmorphism();
     position: relative;
     margin-top: 2.2rem;
-    background: url(#{$img-path}/portrait/2.jpg) no-repeat center center/cover;
+    background: url(#{$img-path}/portrait/CS-9.jpg) no-repeat center center/cover;
     padding: 2rem 1rem;
     min-height: 50vh;
     border-bottom-right-radius: 3rem;
@@ -255,57 +254,63 @@ header {
             color: $primary-color;
         }
     }
-}
+}  
 
 .details {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    
-        h2, h3 {
-            margin: 2rem 0 .7rem 0;
-        }
 
-        li {
-            margin-bottom: 0.4rem;
-            list-style-type: disc;
-            margin-left: 1rem;
-        }
+    .intro {
+        margin-top: 1rem;
+    }
 
-        button.get-quote {
-            background-color: $accent-color;
-            color: $primary-color;
-            font-weight: 700;
-            padding: .7rem;
-            font-size: 1.2rem;
-            border-radius: 1rem;
-            cursor: pointer;
-            transition: $transition;
-            align-self: center;
-            width: max-content;
-    
-            &:hover, &:focus {
-                box-shadow: 0 0 20px $accent-color;
-            }
-    
-            a {
-                padding: .7rem;
-                color: $primary-color;
-            }
-        }
 
-        .location {
-            height: 2rem;
-            width: max-content;
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: 2rem auto;
+    h2, h3 {
+        margin: 2rem 0 .7rem 0;
+    }
 
-            svg {
-                fill: $accent-color;
-            }
-        }
+    li {
+        margin-bottom: 0.4rem;
+        list-style-type: disc;
+        margin-left: 1rem;
+    }
 }
+
+button.get-quote {
+    background-color: $accent-color;
+    color: $primary-color;
+    font-weight: 700;
+    padding: .7rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: $transition;
+    align-self: center;
+    width: max-content;
+
+    &:hover, &:focus {
+        box-shadow: 0 0 20px $accent-color;
+    }
+
+    a {
+        padding: .7rem;
+        color: $primary-color;
+    }
+}
+
+.location {
+    height: 2rem;
+    width: max-content;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2rem auto;
+
+    svg {
+        fill: $accent-color;
+    }
+}
+
 
 #testimonials {
     margin-top: 3rem;
@@ -380,6 +385,79 @@ header {
     
                 svg {
                     fill: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+// FAQ Heading
+#faq {
+    text-align: center;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: 3rem;
+}
+
+.faq{
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    background-color: $secondary-color;
+    margin-top: 1rem;
+    
+    .accordion{
+        background: $accent-color;
+        color: $primary-color;
+        border-radius: 1rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        margin: 1rem 0;
+        justify-self: center;
+
+        .faq-item{
+                
+            .question{
+                border-bottom: 1px solid $primary-color;
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+                margin-right: 1rem;
+                font-size: .9rem;
+                font-weight: 600;
+                cursor: pointer;
+                position: relative;
+                transition: $transition;
+                
+                &::after{
+                    position: absolute;
+                    content: "+";
+                    top: 0;
+                    font-size: 1.2rem;
+                    right: -1rem;
+                }
+            }
+
+            .answer{
+                margin-bottom: 1rem;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: $transition;           
+            }
+
+            &.active{
+                .question{
+                    font-size: .7rem;
+
+                    &::after{
+                        content: '-';
+                    }
+                }
+
+                .answer{
+                    max-height: 500px;
+                    opacity: 1;
                 }
             }
         }

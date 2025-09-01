@@ -2,78 +2,174 @@
 const projectsData = {
     carShades: [
         {
-            portrait: './images/portrait/1.jpg',
-            landscape: './images/landscape/1.jpg',
+            portrait: './images/portrait/CS-1.jpg',
+            landscape: './images/landscape/CS-1.jpg',
             description: 'Sleek double car shade installed in Karen &mdash; built for style and durability',
             id: 1
         },
         {
-            portrait: './images/portrait/2.jpg',
-            landscape: './images/landscape/2.jpg',
+            portrait: './images/portrait/CS-2.jpg',
+            landscape: './images/landscape/CS-2.jpg',
             description: "Modern canopy design with UV protection, perfect for Nairobi's climate",
             id: 2
         },
         {
-            portrait: './images/portrait/3.jpg',
-            landscape: './images/landscape/3.jpg',
+            portrait: './images/portrait/CS-3.jpg',
+            landscape: './images/landscape/CS-3.jpg',
             description: 'Custom carpot with powder-coated steel frame &mdash; elegance meets strength',
             id: 3
         },
         {
-            portrait: './images/portrait/4.jpg',
-            landscape: './images/landscape/4.jpg',
-            description: 'Project Description...',
+            portrait: './images/portrait/CS-4.jpg',
+            landscape: './images/landscape/CS-4.jpg',
+            description: 'We supply and install for hassle-free service',
             id: 4
+        },
+        {
+            portrait: './images/portrait/CS-5.jpg',
+            landscape: './images/landscape/CS-5.jpg',
+            description: 'Maximum coverage, minimal space',
+            id: 5
+        },
+        {
+            portrait: './images/portrait/CS-6.jpg',
+            landscape: './images/landscape/CS-6.jpg',
+            description: 'Premium protection at the right price',
+            id: 6
+        },
+        {
+            portrait: './images/portrait/CS-7.jpg',
+            landscape: './images/landscape/CS-7.jpg',
+            description: 'No more hot seats or boiling dashboards',
+            id: 7
+        },
+        {
+            portrait: './images/portrait/CS-8.jpg',
+            landscape: './images/landscape/CS-8.jpg',
+            description: 'Strong steel frame + UV-treated fabric',
+            id: 8
+        },
+        {
+            portrait: './images/portrait/CS-9.jpg',
+            landscape: './images/landscape/CS-9.jpg',
+            description: 'Car shades customized to your space',
+            id: 9
+        },
+        {
+            portrait: './images/portrait/CS-10.jpg',
+            landscape: './images/landscape/CS-10.jpg',
+            description: 'Protection that adds elegance to your outdoors',
+            id: 10
+        },
+        {
+            portrait: './images/portrait/CS-11.jpg',
+            landscape: './images/landscape/CS-11.jpg',
+            description: 'Stylish shade that keeps your car cool and safe',
+            id: 11
+        },
+        {
+            portrait: './images/portrait/CS-12.jpg',
+            landscape: './images/landscape/CS-12.jpg',
+            description: 'Reliable cover against sun, rain & dust',
+            id: 12
         },
     ],
     landscaping: [
         {
-            portrait: './images/portrait/5.jpg',
-            landscape: './images/landscape/5.jpg',
+            portrait: './images/portrait/CS-5.jpg',
+            landscape: './images/landscape/CS-5.jpg',
             description: 'Lush lawn installation with stone edging &mdash; a backyard transformed',
             id: 5
         },
         {
-            portrait: './images/portrait/6.jpg',
-            landscape: './images/landscape/6.jpg',
+            portrait: './images/portrait/CS-6.jpg',
+            landscape: './images/landscape/CS-6.jpg',
             description: 'Garden makeover with native plants and drip irrigation system',
             id: 6
         },
         {
-            portrait: './images/portrait/7.jpg',
-            landscape: './images/landscape/7.jpg',
+            portrait: './images/portrait/CS-7.jpg',
+            landscape: './images/landscape/CS-7.jpg',
             description: 'Pathway design with cabro-paving and flower beds &mdash; functional beauty',
             id: 7
         },
         {
-            portrait: './images/portrait/8.jpg',
-            landscape: './images/landscape/8.jpg',
+            portrait: './images/portrait/CS-8.jpg',
+            landscape: './images/landscape/CS-8.jpg',
+            description: 'Project Description...',
+            id: 8
+        },
+        {
+            portrait: './images/portrait/CS-5.jpg',
+            landscape: './images/landscape/CS-5.jpg',
+            description: 'Lush lawn installation with stone edging &mdash; a backyard transformed',
+            id: 5
+        },
+        {
+            portrait: './images/portrait/CS-6.jpg',
+            landscape: './images/landscape/CS-6.jpg',
+            description: 'Garden makeover with native plants and drip irrigation system',
+            id: 6
+        },
+        {
+            portrait: './images/portrait/CS-7.jpg',
+            landscape: './images/landscape/CS-7.jpg',
+            description: 'Pathway design with cabro-paving and flower beds &mdash; functional beauty',
+            id: 7
+        },
+        {
+            portrait: './images/portrait/CS-8.jpg',
+            landscape: './images/landscape/CS-8.jpg',
             description: 'Project Description...',
             id: 8
         },
     ],
     privacyScreens: [
         {
-            portrait: './images/portrait/9.jpg',
-            landscape: './images/landscape/9.jpg',
+            portrait: './images/portrait/CS-9.jpg',
+            landscape: './images/landscape/CS-9.jpg',
             description: 'Elegant privacy screen with wood finish &mdash; perfect for garden boundaries',
             id: 9
         },
         {
-            portrait: './images/portrait/10.jpg',
-            landscape: './images/landscape/10.jpg',
+            portrait: './images/portrait/CS-10.jpg',
+            landscape: './images/landscape/CS-10.jpg',
             description: 'Powder-coated metal panels installed in Lavington for added security',
             id: 10
         },
         {
-            portrait: './images/portrait/11.jpg',
-            landscape: './images/landscape/11.jpg',
+            portrait: './images/portrait/CS-11.jpg',
+            landscape: './images/landscape/CS-11.jpg',
             description: 'Stylish screen design that blends privacy with modern aesthetics',
             id: 11
         },
         {
-            portrait: './images/portrait/12.jpg',
-            landscape: './images/landscape/12.jpg',
+            portrait: './images/portrait/CS-12.jpg',
+            landscape: './images/landscape/CS-12.jpg',
+            description: 'Project Description...',
+            id: 12
+        },
+        {
+            portrait: './images/portrait/CS-9.jpg',
+            landscape: './images/landscape/CS-9.jpg',
+            description: 'Elegant privacy screen with wood finish &mdash; perfect for garden boundaries',
+            id: 9
+        },
+        {
+            portrait: './images/portrait/CS-10.jpg',
+            landscape: './images/landscape/CS-10.jpg',
+            description: 'Powder-coated metal panels installed in Lavington for added security',
+            id: 10
+        },
+        {
+            portrait: './images/portrait/CS-11.jpg',
+            landscape: './images/landscape/CS-11.jpg',
+            description: 'Stylish screen design that blends privacy with modern aesthetics',
+            id: 11
+        },
+        {
+            portrait: './images/portrait/CS-12.jpg',
+            landscape: './images/landscape/CS-12.jpg',
             description: 'Project Description...',
             id: 12
         },
@@ -114,7 +210,7 @@ function renderProjects() {
         const imgSrc =isPortraitScreen ? project.portrait : project.landscape
 
         projectDiv.innerHTML = `
-        <img src='${imgSrc}' alt='project-${project.id}' loading='lazy'>
+        <div class='img-container'><img src='${imgSrc}' alt='project-${project.id}' loading='lazy'></div>
         <div class='description'><p>${project.description}</p></div>
         `
         projectsDiv.appendChild(projectDiv)
@@ -166,7 +262,7 @@ const testimonials = [
     },
     {
         solution: 'landscaping',
-        review: 'They transformed our barkyard into a beautiful green space with cabro paths and flower beds.',
+        review: 'They transformed our backyard into a beautiful green space with cabro paths and flower beds.',
         client: 'Kevin O., Syokimau'
     },
 ]
@@ -178,6 +274,17 @@ let solution = ''
 if (route.includes('car-shades')) solution = 'car-shades'
 else if (route.includes('privacy-screens')) solution = 'privacy-screens'
 else if (route.includes('landscaping')) solution = 'landscaping'
+
+// Initialize masonry
+// window.addEventListener('load', () => {
+//     const grid = document.querySelector('.projects')
+//     new Masonry(grid,{
+//         itemSelector: '.project',
+//         columnWidth: '232',
+//         gutter: 20,
+//         fitWidth: true
+//     })
+// })
 
 // Filter testimonials by solution
 const filteredTestimonials = testimonials.filter(t => t.solution === solution)
@@ -260,8 +367,8 @@ function nextTestimonial() {
 document.querySelector('#prevBtn').addEventListener('click', prevTestimonial)
 document.querySelector('#nextBtn').addEventListener('click', nextTestimonial)
 
-// Auto-rotate
-setInterval( nextTestimonial, 6000)
+// Autoplay
+setInterval( nextTestimonial, 10000)
 
 // Initial load
 if ( filteredTestimonials.length > 0) {

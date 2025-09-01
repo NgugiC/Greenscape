@@ -5,30 +5,39 @@ header .nav .menu #solutions.active::after {
 }
 
 #projects {
-    background-color: $secondary-color;
+    // background-color: $secondary-color;
     padding: 1rem 0;
     margin-top: 3rem;
 }
 
 .projects {
-    margin-top: 2rem;
-    display: grid;
-    gap: 3rem;
+    column-count: 1;
+    column-gap: 2rem;
     
     .project{
+        display: inline-block;
+        margin-bottom: 2rem;
+        width: 100%;
+        break-inside: avoid;
+        height: fit-content;
         border-radius: 1rem;
+        overflow: hidden;
         background-color: $light-accent-color;
         box-shadow: 2px 5px 15px;
-        min-height: 320px;
-        height: fit-content;
-
-        img {
-            border-top-right-radius: 1rem;
-            border-top-left-radius: 1rem;
+        
+        .img-container{
+            
+            img {
+                object-fit: contain;
+            }
         }
 
         .description {
-            padding: 1rem 1rem 0;
+            padding: 1rem;
+            padding-bottom: 0;
+            display: flex;
+            justify-self: flex-start;
+            max-height: fit-content;
         }
     }
 }

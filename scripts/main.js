@@ -15,5 +15,26 @@ document.addEventListener('click', (e) => {
     }
 })
 
+// FAQ Accordion
+const accordion = document.querySelectorAll('.faq-item')
+
+accordion.forEach(item => {
+    const question = item.querySelector('.question')
+
+    question.addEventListener('click', () => {
+        // Close all other items
+        accordion.forEach(i => {
+            if (i !== item) {
+                i.classList.remove('active')
+            }
+        })
+
+        // Toggle current item
+        const isActive = item.classList.contains('active')
+        item.classList.toggle('active')
+
+    })
+})
+
 // Generate footer copyright year
 const year = document.querySelector('#year').innerText = new Date().getFullYear()

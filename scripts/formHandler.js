@@ -237,6 +237,12 @@ document.querySelector('#whatsapp-link').addEventListener('click', e => {
     window.location.href= "https://api.whatsapp.com/send?phone=254715538159"
 })
 
+// Tiktok Redirect
+document.querySelector('#tiktok-link').addEventListener('click', e => {
+    e.preventDefault()
+    window.location.href= "https://www.tiktok.com/@paulngwiri249"
+})
+
 // Phone Number Injector
 document.querySelector('#phone-number').addEventListener('click', e => {
     e.preventDefault()
