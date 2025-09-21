@@ -74,54 +74,68 @@ const projectsData = {
             id: 12
         },
     ],
+    cabros: [
+        {
+            portrait: './images/portrait/cabros.jpg',
+            landscape: './images/landscape/cabros.jpg',
+            description: 'Interlocking cabros in a herringbone layout &mdash; timeless strength with geometric charm',
+            id: 5
+        },
+        {
+            portrait: './images/portrait/cabros1.jpg',
+            landscape: './images/landscape/cabros1.jpg',
+            description: 'Heavy-duty cabros laid for high-traffic zones &mdash; built to endure, styled to impress',
+            id: 6
+        },
+        {
+            portrait: './images/portrait/cabros2.jpg',
+            landscape: './images/landscape/cabros2.jpg',
+            description: 'Courtyard cabros with custom inlay &mdash; where artistry meets outdoor utility',
+            id: 7
+        },
+        {
+            portrait: './images/portrait/cabros3.jpg',
+            landscape: './images/landscape/cabros3.jpg',
+            description: 'Cabro path framed by lush greenery &mdash; a walkable blend of nature and structure',
+            id: 8
+        },
+        {
+            portrait: './images/portrait/cabros4.jpg',
+            landscape: './images/landscape/cabros4.jpg',
+            description: 'Pathway design with cabro-paving and flower beds &mdash; functional beauty',
+            id: 9
+        },
+    ],
     landscaping: [
         {
-            portrait: './images/portrait/CS-5.jpg',
-            landscape: './images/landscape/CS-5.jpg',
+            portrait: './images/portrait/landscaping.jpg',
+            landscape: './images/landscape/landscaping.jpg',
             description: 'Lush lawn installation with stone edging &mdash; a backyard transformed',
             id: 5
         },
         {
-            portrait: './images/portrait/CS-6.jpg',
-            landscape: './images/landscape/CS-6.jpg',
+            portrait: './images/portrait/landscaping1.jpg',
+            landscape: './images/landscape/landscaping1.jpg',
             description: 'Garden makeover with native plants and drip irrigation system',
             id: 6
         },
         {
-            portrait: './images/portrait/CS-7.jpg',
-            landscape: './images/landscape/CS-7.jpg',
+            portrait: './images/portrait/landscaping2.jpg',
+            landscape: './images/landscape/landscaping2.jpg',
             description: 'Pathway design with cabro-paving and flower beds &mdash; functional beauty',
             id: 7
         },
         {
-            portrait: './images/portrait/CS-8.jpg',
-            landscape: './images/landscape/CS-8.jpg',
-            description: 'Project Description...',
-            id: 8
-        },
-        {
-            portrait: './images/portrait/CS-5.jpg',
-            landscape: './images/landscape/CS-5.jpg',
-            description: 'Lush lawn installation with stone edging &mdash; a backyard transformed',
-            id: 5
-        },
-        {
-            portrait: './images/portrait/CS-6.jpg',
-            landscape: './images/landscape/CS-6.jpg',
-            description: 'Garden makeover with native plants and drip irrigation system',
-            id: 6
-        },
-        {
-            portrait: './images/portrait/CS-7.jpg',
-            landscape: './images/landscape/CS-7.jpg',
+            portrait: './images/portrait/redsoil.jpg',
+            landscape: './images/landscape/redsoil.jpg',
             description: 'Pathway design with cabro-paving and flower beds &mdash; functional beauty',
-            id: 7
+            id: 8
         },
         {
-            portrait: './images/portrait/CS-8.jpg',
-            landscape: './images/landscape/CS-8.jpg',
-            description: 'Project Description...',
-            id: 8
+            portrait: './images/portrait/plants.jpg',
+            landscape: './images/landscape/plants.jpg',
+            description: 'Pathway design with cabro-paving and flower beds &mdash; functional beauty',
+            id: 9
         },
     ],
     privacyScreens: [
@@ -173,14 +187,24 @@ const projectsData = {
             description: 'Project Description...',
             id: 12
         },
+    ],
+    gutters: [
+        {
+            portrait: './images/portrait/gutters.jpg',
+            landscape: './images/landscape/gutters.jpg',
+            description: 'Hands-on craftsmanship, ladder-high &mdash; where precision meets protection, one bucket at a time. ',
+            id: 9 
+        }
     ]
 }
 
-// Detect Category from URL
+// Detect Category from URL for image rendering
 function getCategoryFromURL() {
     const path = window.location.pathname.toLowerCase()
 
     if (path.includes('car-shades')) return 'carShades'
+    if (path.includes('cabros')) return 'cabros'
+    if (path.includes('gutters')) return 'gutters'
     if (path.includes('landscaping')) return 'landscaping'
     if (path.includes('privacy-screens')) return 'privacyScreens'
 
@@ -265,6 +289,20 @@ const testimonials = [
         review: 'They transformed our backyard into a beautiful green space with cabro paths and flower beds.',
         client: 'Kevin O., Syokimau'
     },
+
+    // Cabros
+    {
+        solution: 'cabros',
+        review: 'Our driveway used to flood and crack. Greenscapes laid cabros with proper drainage and a beautiful finish. It\'s functional and stunning.',
+        client: 'Nancy W., South C'
+    },
+
+    // Gutters
+    {
+        solution: 'gutters',
+        review: 'Before Greenscape installed gutters, our flowerbeds kept washing away. Now the water flows exactly where it should — and the house looks sharper too.',
+        client: 'Brian M., Lang\'ata'
+    }
 ]
 
 // Detect current page from URL
@@ -274,6 +312,8 @@ let solution = ''
 if (route.includes('car-shades')) solution = 'car-shades'
 else if (route.includes('privacy-screens')) solution = 'privacy-screens'
 else if (route.includes('landscaping')) solution = 'landscaping'
+else if (route.includes('cabros')) solution = 'cabros'
+else if (route.includes('gutters')) solution = 'gutters'
 
 // Initialize masonry
 // window.addEventListener('load', () => {
@@ -366,6 +406,7 @@ function nextTestimonial() {
 // Button listeners
 document.querySelector('#prevBtn').addEventListener('click', prevTestimonial)
 document.querySelector('#nextBtn').addEventListener('click', nextTestimonial)
+document.querySelector('.nav-buttons').style.display = 'none' // Hide buttons
 
 // Autoplay
 setInterval( nextTestimonial, 10000)

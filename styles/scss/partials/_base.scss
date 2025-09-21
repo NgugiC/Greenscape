@@ -205,6 +205,14 @@ header {
     }
 }
 
+.cabros-page .hero {
+    background: url(#{$img-path}/portrait/cabros3.jpg) no-repeat center center/cover;
+}
+
+.gutters-page .hero {
+    background: url(#{$img-path}/portrait/gutters.jpg) no-repeat center center/cover;
+}
+
 .hero{
     @include glasmorphism();
     position: relative;
@@ -272,8 +280,12 @@ header {
 
     li {
         margin-bottom: 0.4rem;
-        list-style-type: disc;
+        list-style-type: circle;
         margin-left: 1rem;
+    }
+
+    .cta {
+        margin-top: 2rem;
     }
 }
 
