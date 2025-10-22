@@ -5,39 +5,45 @@ header .nav .menu #solutions.active::after {
 }
 
 #projects {
-    // background-color: $secondary-color;
     padding: 1rem 0;
     margin-top: 3rem;
-}
-
-.projects {
-    column-count: 1;
-    column-gap: 2rem;
     
-    .project{
-        display: inline-block;
-        margin-bottom: 2rem;
-        width: 100%;
-        break-inside: avoid;
-        height: fit-content;
-        border-radius: 1rem;
-        overflow: hidden;
-        background-color: $light-accent-color;
-        box-shadow: 2px 5px 15px;
+    .projects {
+        column-count: 1;
+        column-gap: 2rem;
         
-        .img-container{
+        .project{
+            display: inline-block;
+            margin-bottom: 2rem;
+            width: 100%;
+            break-inside: avoid;
+            // max-height: fit-content;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 5px 5px 20px $font-color;
             
-            img {
-                object-fit: contain;
+            .img-container{
+                border: red solid;
+                max-height: max-content;
+                height: 100%;
+    
+                img {
+                    object-fit: contain;
+                }
             }
-        }
-
-        .description {
-            padding: 1rem;
-            padding-bottom: 0;
-            display: flex;
-            justify-self: flex-start;
-            max-height: fit-content;
+    
+            .description {
+                padding: 0 1rem 0 1rem;
+                // padding-bottom: 0;
+                display: flex;
+                justify-self: flex-start;
+                max-height: fit-content;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+                border: 1px solid $light-accent-color;
+                width: 100%;
+                border-top: 0;
+            }
         }
     }
 }

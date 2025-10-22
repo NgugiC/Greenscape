@@ -65,18 +65,25 @@ header {
     background-color: $primary-color;
     box-shadow: 0 1px 5px color.adjust($primary-color, $lightness: -20%);
     z-index: 1;
+    padding: 0;
+    margin: 0;
     
     .nav {
-        padding: .4rem 0;
+        // padding: .4rem 0;
         position: relative;
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        min-height: fit-content;
+        height: 3rem;
         
         .logo {
-            width: 30vw;
-
+            height: 100%;
+            // transform: scale(.8);
+            border: red solid;
+            margin: 0;
+            
             a {
                 color: $accent-color;
             }
@@ -84,16 +91,38 @@ header {
         
         .toggle-menu {
             cursor: pointer;
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 2rem;
             
             span {
-                width: 2rem;
-                height: 2px;
+                width: 100%;
+                height: .3rem;
                 display: block;
                 border-radius: 2rem;
-                border: 2px solid $accent-color;
+                background-color: $accent-color;
+                transition: $transition;
 
                 &:not(:last-of-type)  {                    
                     margin-bottom: .3rem;
+                }
+            }
+
+            &.active span {
+                margin-right: .3rem;
+
+                &:first-of-type {
+                    transform: rotate(-45deg) translate(-5px, 9px);
+                }
+
+                &:nth-of-type(2) {
+                    transform: scale(0);
+                }
+                &:last-of-type {
+                    transform: rotate(45deg) translate(-5px, -8px);
                 }
             }
         }    
@@ -101,8 +130,8 @@ header {
         // Main Menu
         .menu {
             position: absolute;
-            top: 2.15rem;
-            // border: 1px solid;
+            top: 3.4rem;
+            // top: 0;
             max-height: 0;
             transition: $transition;
             width: 100%;
@@ -213,6 +242,10 @@ header {
     background: url(#{$img-path}/portrait/gutters.jpg) no-repeat center center/cover;
 }
 
+.landscaping-page .hero {
+    background: url(#{$img-path}/portrait/landscaping2.jpg) no-repeat center center/cover;
+}
+
 .hero{
     @include glasmorphism();
     position: relative;
@@ -312,10 +345,11 @@ button.get-quote {
 }
 
 .location {
-    height: 2rem;
+    height: 1.2rem;
     width: max-content;
     display: grid;
     gap: 1rem;
+    margin: 1rem;
     grid-template-columns: 2rem auto;
 
     svg {
@@ -326,7 +360,6 @@ button.get-quote {
 
 #testimonials {
     margin-top: 3rem;
-    background-color: $secondary-color;
     padding: 1rem 0;
 
     .testimonials {

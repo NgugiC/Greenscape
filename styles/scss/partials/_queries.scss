@@ -6,7 +6,7 @@
     }
 
     // !Projects Page
-    .projects {
+    #projects .projects {
         column-count: 2;
 
         .project {
@@ -19,11 +19,9 @@
     // !Header Styles
     header .nav {
         padding: 0;
-        grid-template-columns: 1fr auto;
-        
-        .logo {
-            width: 15vw;
-        }
+        display: grid;
+        grid-template-columns: 70px auto;
+        margin: 0;
         
         .toggle-menu {
             display: none;
@@ -35,10 +33,10 @@
             max-width: fit-content;
             background-color: transparent;
             border-bottom-right-radius: 0rem;
-            position: relative;
             top: 0;
+            right: 0;
             overflow: visible;
-
+            
             li:not(:last-of-type) {
                 border: none;
                 height: 100%;
@@ -87,6 +85,7 @@
             }
         }
     }
+    
 
     // !Hero Section
     .hero {
@@ -202,7 +201,7 @@
 
 @media (min-width: 1024px){
     // !Projects Page
-    .projects {
+   #projects .projects {
         column-count: 3;
     }
 }

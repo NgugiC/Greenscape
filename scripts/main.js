@@ -5,6 +5,7 @@ const menu = document.querySelector('.menu')
 menuToggler.addEventListener('click', (e) => {
     if (!menu.contains(e.target)){
         menu.classList.toggle('active')
+        menuToggler.classList.toggle('active')
     }
 })
 
@@ -12,6 +13,7 @@ menuToggler.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
     if (!menu.contains(e.target) && !menuToggler.contains(e.target)){
         menu.classList.remove('active')
+        menuToggler.classList.remove('active')
     }
 })
 
