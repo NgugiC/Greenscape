@@ -69,9 +69,8 @@ header {
     margin: 0;
     
     .nav {
-        // padding: .4rem 0;
         position: relative;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
@@ -79,10 +78,9 @@ header {
         height: 3rem;
         
         .logo {
-            height: 100%;
-            // transform: scale(.8);
-            border: red solid;
-            margin: 0;
+            height: calc(100% - 5px);
+            padding-top: 5px;
+            justify-self: center;
             
             a {
                 color: $accent-color;
@@ -130,8 +128,7 @@ header {
         // Main Menu
         .menu {
             position: absolute;
-            top: 3.4rem;
-            // top: 0;
+            top: 100%;
             max-height: 0;
             transition: $transition;
             width: 100%;
@@ -219,10 +216,11 @@ header {
                 a {
                     color: $accent-color;
                     transition: $transition;
-                    display: inline-block;
+                    display: block;
                     font-weight: bold;
                     width: 100%;
-                    padding: 0.5rem;
+                    height: 100%;
+                    padding: .5rem;
 
                     &.active , &:hover, &:focus  {
                         background-color: $accent-color;
